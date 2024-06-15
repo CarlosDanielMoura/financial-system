@@ -1,0 +1,71 @@
+{
+  "path": "cz-conventional-changelog",
+  "scopes": [
+    "prisma",
+    "src",
+    "controller",
+    "database",
+    "interface",
+    "middleware",
+    "routes",
+    "schema",
+    "service",
+    "utils",
+    "utils/helpers",
+    "global"
+  ],
+  "scopeOverrides": {
+    "fix": [],
+    "feat": []
+  },
+  "types": {
+    "feat": {
+      "description": "Nova funcionalidade",
+      "title": "Features"
+    },
+    "fix": {
+      "description": "Correção de bugs",
+      "title": "Bug Fixes"
+    },
+    "chore": {
+      "description": "Tarefas de manutenção e refatoração",
+      "title": "Chores"
+    },
+    "docs": {
+      "description": "Atualização de documentação",
+      "title": "Documentation"
+    },
+    "style": {
+      "description": "Mudanças que não afetam o código (formatação, lint, etc)",
+      "title": "Styles"
+    },
+    "refactor": {
+      "description": "Refatoração de código que não corrige um bug nem adiciona uma funcionalidade",
+      "title": "Code Refactoring"
+    },
+    "test": {
+      "description": "Adição ou modificação de testes",
+      "title": "Tests"
+    },
+    "perf": {
+      "description": "Melhorias de desempenho",
+      "title": "Performance Improvements"
+    },
+    "ci": {
+      "description": "Mudanças em configurações de CI/CD",
+      "title": "CI Changes"
+    },
+    "revert": {
+      "description": "Reverter para um commit anterior",
+      "title": "Reverts"
+    }
+  },
+  "allowCustomScopes": true,
+  "allowBreakingChanges": ["feat", "fix"],
+  "scopeQuestion": "Qual o escopo dessa mudança (por exemplo, componente ou nome do arquivo):",
+  "subject": "Escreva uma descrição curta e imperativa da mudança:",
+  "body": "Forneça uma descrição mais detalhada da mudança (opcional). Use '|' para quebras de linha:",
+  "breaking": "Liste quaisquer BREAKING CHANGES (opcional):",
+  "footer": "Liste quaisquer ISSUES RESOLVIDAS por este commit (por exemplo: \"fixes #123\", \"re #123\"):",
+  "confirmCommit": "Confirma o commit acima?"
+}

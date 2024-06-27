@@ -1,6 +1,6 @@
+import 'express-async-errors';
 import 'dotenv/config';
 import app from './server';
-import 'express-async-errors';
 
 const PORT = process.env.PORT || 3000;
 

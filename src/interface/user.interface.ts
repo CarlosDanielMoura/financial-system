@@ -1,11 +1,11 @@
 import type { User as UserPrisma, UserRole } from '@prisma/client';
 
-export interface IUserCreate {
+export type IUserCreate = {
 	name: string;
 	email: string;
 	password: string;
 	role: UserRole;
-}
+};
 
 export interface IUser extends UserPrisma {
 	id: number;
@@ -17,7 +17,7 @@ export interface IUser extends UserPrisma {
 	updatedAt: Date;
 }
 
-export interface IUserWithoutPassword extends Omit<IUser, 'password'> {}
+export type IUserWithoutPassword = Omit<IUser, 'password'>;
 
 export interface IUserService {
 	create(data: IUserCreate): Promise<IUserWithoutPassword>;

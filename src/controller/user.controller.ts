@@ -3,7 +3,7 @@ import type { IUserCreate, IUserService } from '../interface/user.interface';
 import { UserCreateSchema } from '../schema/user.schema';
 
 import HttpResponse from '../utils/HttpResponse';
-import { BadRequestError } from '../utils/helpers/api-errors';
+import { BadRequestError, NotFoundError } from '../utils/helpers/api-errors';
 
 class UserController {
 	private readonly userService: IUserService;
@@ -34,6 +34,14 @@ class UserController {
 
 		const user = await this.userService.create(parseResult.data);
 		res.status(201).send(HttpResponse(201, 'Usuário criado com sucesso.', user));
+	}
+
+	async findAll(_req: Request, res: Response): Promise<void> {
+		const users = await this.userService.findAll();
+		if (!users) {
+			throw new NotFoundError('Nenhum usuário encontrado.');
+		}
+		res.status(200).send(HttpResponse(200, 'Lista de usuários.', users));
 	}
 }
 

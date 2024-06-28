@@ -7,5 +7,6 @@ const userRouter = express.Router();
 const userController = new UserController(new UserServicePrisma());
 
 userRouter.post('/', (req: Request, res: Response) => userController.create(req, res));
+userRouter.get('/', (_req: Request, _res: Response) => userController.findAll(_req, _res));
 
 export { userRouter };

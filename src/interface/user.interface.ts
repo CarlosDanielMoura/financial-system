@@ -22,4 +22,5 @@ export type IUserWithoutPassword = Omit<IUser, 'password'>;
 export interface IUserService {
 	create(data: IUserCreate): Promise<IUserWithoutPassword>;
 	findByEmail(email: string): Promise<IUser | null>;
+	findAll(): Promise<IUserWithoutPassword[] | null>;
 }
